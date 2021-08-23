@@ -504,6 +504,39 @@
     </table>
     <script>
         const celulas = document.querySelectorAll('td');
+        for (let i = 0; i < celulas.length-1; i++) {
+            if (celulas[i].classList.value === "") {
+                celulas[i].classList.add('paredes');
+            }
+            celulas[i].addEventListener('click', celulaClick, false);
+        }
+
+        function celulaClick (event) {
+            let celula = event.target;
+            console.log(celula.className);
+
+            if (celula.classList.contains('paredes')) {
+                celula.classList.remove('paredes');
+                console.log(celula.className);
+            } else if (celula.className === "") {
+                celula.classList.add('orcs');
+                celula.innerHTML = "O";
+                console.log(celula.className);
+            } else if (celula.classList.contains('orcs')) {
+                celula.classList.remove('orcs');
+                celula.innerHTML = "";
+                celula.classList.add('tesouros');
+                celula.innerHTML = "T";
+                console.log(celula.className);
+            } else {
+                celula.classList.remove('tesouros');
+                celula.innerHTML = "";
+                celula.classList.add('paredes');
+                console.log(celula.className);
+            } 
+        };
+
+
 
     </script>
 
