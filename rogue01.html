@@ -15,7 +15,7 @@
             color: cyan
         }
 
-        .orcs {
+        .orc {
             color:greenyellow;
         }
         .tesouros {
@@ -165,7 +165,7 @@
                 <td class="paredes"></td>
                 <td class="paredes"></td>
                 <td class="paredes"></td>
-                <td class="orcs">O</td>
+                <td class="orc">O</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -210,7 +210,7 @@
                 <td class="paredes"></td>
                 <td></td>
                 <td></td>
-                <td class="orcs">O</td>
+                <td class="orc">O</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -284,7 +284,7 @@
         <tr>
             <td></td>
                 <td></td>
-                <td class="orcs">O</td>
+                <td class="orc">O</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -335,7 +335,7 @@
                 <td class="paredes"></td>
                 <td></td>
                 <td></td>
-                <td class="orcs">O</td>
+                <td class="orc">O</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -372,7 +372,7 @@
         <tr>
             <td></td>
                 <td></td>
-                <td class="orcs">O</td>
+                <td class="orc">O</td>
                 <td></td>
                 <td></td>
                 <td class="paredes"></td>
@@ -505,7 +505,7 @@
     <script>
         const celulas = document.querySelectorAll('td');
         for (let i = 0; i < celulas.length-1; i++) {
-            if (celulas[i].classList.value === "") {
+            if (celulas[i].classList.length === "0") {
                 celulas[i].classList.add('paredes');
             }
             celulas[i].addEventListener('click', celulaClick, false);
@@ -519,11 +519,11 @@
                 celula.classList.remove('paredes');
                 console.log(celula.className);
             } else if (celula.className === "") {
-                celula.classList.add('orcs');
+                celula.classList.add('orc');
                 celula.innerHTML = "O";
                 console.log(celula.className);
-            } else if (celula.classList.contains('orcs')) {
-                celula.classList.remove('orcs');
+            } else if (celula.classList.contains('orc')) {
+                celula.classList.remove('orc');
                 celula.innerHTML = "";
                 celula.classList.add('tesouros');
                 celula.innerHTML = "T";
@@ -534,9 +534,7 @@
                 celula.classList.add('paredes');
                 console.log(celula.className);
             } 
-        };
-
-
+        }
 
     </script>
 
